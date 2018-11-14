@@ -1,0 +1,12 @@
+{
+  "name": "@statink/yii2-paintball",
+  "version": "0.0.0",
+  "author": "AIZAWA Hina",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^9.3.1",
+    "clean-css-cli": "^4.2.1",
+    "postcss-cli": "^6.0.1",
+    "sass": "^1.14.3"
+  }
+}
