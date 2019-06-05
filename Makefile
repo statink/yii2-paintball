@@ -48,4 +48,4 @@ package-lock.json: package.json
 	gzip -9 < $< > $@
 
 %.br: %
-	bro --force --quality 11 --input $< --output $@ --no-copy-stat
+	brotli --force --best --output=$@ --no-copy-stat $<
