@@ -5,14 +5,20 @@
     "description": "Paintball asset bundle for stat.ink",
     "minimum-stability": "stable",
     "require": {
-        "php": ">= 7.1.0",
+        "php": ">= 7.4.0",
         "yiisoft/yii2": "~2.0.15"
     },
     "config": {
-        "process-timeout": 1800,
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        },
         "fxp-asset": {
             "enabled": false
-        }
+        },
+        "platform": {
+            "php": "7.4.13"
+        },
+        "process-timeout": 1800
     },
     "autoload": {
         "psr-4": {

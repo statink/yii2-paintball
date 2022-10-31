@@ -4,15 +4,20 @@ ASSETS := \
 	assets/paintball.min.css.gz
 
 .PHONY: all php js clean dist-clean
+.PHONY: all
 all: php js
 
+.PHONY: php
 php: vendor
 
+.PHONY: js
 js: $(ASSETS)
 
+.PHONY: dist-clean
 dist-clean: clean
 	rm -rf composer.phar vendor node_modules
 
+.PHONY: clean
 clean:
 	rm -rf assets/*.css assets/*.css.gz assets/*.css.br
 
@@ -33,16 +38,21 @@ package-lock.json: package.json
 	npm update
 
 .PRECIOUS: %.css
-%.css: %.sass node_modules
-	npx sass --indented --no-source-map --quiet $< | \
+%.css: %.scss node_modules
+	npx sass --no-source-map --quiet $< | \
 		npx postcss --no-map --use autoprefixer -o $@
 
 .PRECIOUS: %.min.css
 %.min.css: %.css node_modules
-	npx cleancss -o $@ $<
+	npx postcss --no-map --use cssnano -o $@ $<
 
 %.gz: %
-	gzip -9 < $< > $@
+	@rm -f $@
+	zopfli -i10000 $<
+
+.PHONY: check-style
+check-style: node_modules
+	npx stylelint 'assets/*.scss'
 
 BROTLI := $(shell if [ -e /usr/bin/brotli ]; then echo brotli; else echo bro; fi )
 %.br: %

@@ -1,7 +1,8 @@
 @font-face {
   font-family: "paintball";
-  src: url("font/paintball_b4.woff") format("woff"), url("font/paintball_b4.ttf") format("truetype");
+  src: local("Project Paintball"), url("font/paintball_b4.woff2") format("woff2"), url("font/paintball_b4.woff") format("woff"), url("font/paintball_b4.ttf") format("truetype");
+  unicode-range: U+20-7E, U+A0-A7, U+A9-AE, U+B0-B3, U+B5-B7, U+B9-17F, U+18F, U+192, U+218-21B, U+259, U+400-45F, U+472-473, U+490-493, U+496-497, U+49A-49B, U+4A2-4A3, U+4AC-4AF, U+4B2-4B3, U+4B6-4B7, U+2000-2014, U+2018-2022, U+2026, U+2030, U+2032-2037, U+2039-203A, U+20AC, U+20B2, U+2116, U+2122, U+2190-2193, U+2196-2199, U+21B6-21B7, U+21BA-21BB, U+2212, U+221A, U+2248, U+2260, U+FB01-FB02, U+FFFD, U+1F500-1F502;
 }
 .paintball {
-  font-family: "paintball", cursive;
+  font-family: "paintball", cursive !important;
 }
